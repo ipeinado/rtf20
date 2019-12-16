@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
 	const { createNodeField } = actions
 	if (node.internal.type === `node__page`) {
-		const alias = createFilePath({ node, getNode, basePath: `pages`})
+		const alias = createFilePath({ node, getNode, basePath: `src/pages`})
 		createNodeField({
 			node,
 			name: `alias`,
