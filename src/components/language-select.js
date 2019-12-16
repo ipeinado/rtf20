@@ -51,7 +51,6 @@ const LanguageSelect = () => {
 	function toggleTranslate(e) {
 		const newTranslate = !translate
 		setTranslate(newTranslate)
-		console.log("clicked")
 	}
 
 	return (

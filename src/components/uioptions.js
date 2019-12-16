@@ -249,6 +249,7 @@ export default function UIOptions() {
 
     function decreaseTextSize(e) {
         const newTextSize = textSize - 0.1
+        document.documentElement.style.fontSize = `${newTextSize * 18}px`
         if (newTextSize > 0.5) {
             setTextSize(newTextSize)    
         }
@@ -256,6 +257,7 @@ export default function UIOptions() {
 
     function increaseTextSize(e) {
         const newTextSize = textSize + 0.1
+        document.documentElement.style.fontSize = `${newTextSize * 18}px`
         if (newTextSize < 2.1) {
             setTextSize(newTextSize)
         }
@@ -267,6 +269,7 @@ export default function UIOptions() {
 
     function decreaseLineSpacing(e) {
         const newLineSpacing = lineSpacing - 0.1
+        document.body.style.lineHeight = `${newLineSpacing * 1.6}`
         if (newLineSpacing > 0.7) {
             setLineSpacing(newLineSpacing)    
         }
@@ -274,14 +277,18 @@ export default function UIOptions() {
 
     function increaseLineSpacing(e) {
         const newLineSpacing = lineSpacing + 0.1
+        document.body.style.lineHeight = `${newLineSpacing * 1.6}`
         if (newLineSpacing < 2.1) {
             setLineSpacing(newLineSpacing)
         }
     }
 
     function contrastChange(e) {
-        const value = e.target.value,
-              inputChosen = document.getElementById(value)
+        const value = e.target.value
+        document.body.classList = ""
+        if (value !== "default") {
+            document.body.classList.add(`fl-theme-${value}`)
+        }
         setContrast(value)
     }
 
@@ -304,7 +311,7 @@ export default function UIOptions() {
             <SlidingPanel id="prefs-panel" style={{ height: isExpanded ? `auto` : `0px` }}>
                 <ul style={{ margin: `1rem 0`, display: `table`, borderSpacing: `20px 0`, }}>
                     <Panel>
-                        <h2>Font size</h2>
+                        <h2>Text size</h2>
                         <p>Adjust font size</p>
                         <div id="textFieldStepper" style={{ display: `flex`, justifyContent: `center`, alignItems: `center` }}>
                             <span style={{ display: `flex`, justifyContent: `center`, alignItems: `center` }}>

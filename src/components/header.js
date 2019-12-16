@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import LanguageSelect from "./language-select"
+import Logo from "../assets/logo.svg"
 import UIOptions from "./uioptions"
 
 export default function Header({ siteTitle }) {
@@ -10,11 +10,11 @@ export default function Header({ siteTitle }) {
   return (
     <header
       style={{
-        background: `rebeccapurple`,
+        background: `#fff`,
         marginBottom: `1.45rem`,
+        borderBottom: `1px solid #ccc`,
       }}
     >
-      <LanguageSelect />
       <UIOptions />
       <div
         style={{
@@ -27,11 +27,16 @@ export default function Header({ siteTitle }) {
           <Link
             to="/"
             style={{
-              color: `white`,
+              color: `#000`,
               textDecoration: `none`,
             }}
           >
-            {siteTitle}
+            <Logo
+              style={{
+                width: `280px`,
+              }}
+              alt={siteTitle}
+            />
           </Link>
         </h1>
       </div>
