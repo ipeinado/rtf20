@@ -7,7 +7,6 @@ export default ({ data }) => {
 	return (
 		<Layout>
 			<div>
-				<img src={ page.relationships.field_page_image.localFile.url } />
 				<h1>{ page.title }</h1>
 				<div dangerouslySetInnerHTML={{ __html: page.body.processed }} />
 			</div>
