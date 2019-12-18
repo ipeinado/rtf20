@@ -3,6 +3,16 @@ module.exports = {
     title: `Raising the Floor`,
     description: `Raising the Floor is an international organization dedicated to make technology accessible for all.`,
     author: `@raisingthefloor`,
+    menuLinks: [
+      {
+        name: `home`,
+        link: `/`
+      },
+      {
+        name: `who we are`,
+        link: `/who-we-are`
+      }
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
